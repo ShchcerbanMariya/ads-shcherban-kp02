@@ -34,7 +34,7 @@ namespace lab2
             int n = 0;
             int x = N / 2;
             int y = N / 2;
-            while (count<N*N)
+            while (count < N * N)
             {
                 if (count == N * N) break;
                 for (int i = 0; i < n; i++)
@@ -84,8 +84,9 @@ namespace lab2
         static void Main(string[] args)
         {
             Console.Write(" введіть розмір квадратної матриці, число непарне : ");
-            int N = int.Parse(Console.ReadLine());
-            if (N < 0 || N % 2 == 0)
+            int N;
+            bool Ncheck = int.TryParse(Console.ReadLine(),out N); //tryparse
+            if (Ncheck || N < 0 || N % 2 == 0)
             {
                 Console.WriteLine(" неправильні вхідні данні");
             }
@@ -108,7 +109,7 @@ namespace lab2
                     }
                     PrintMatrix(main, N);
                     Console.WriteLine();
-                    PrintNum( main, N);
+                    PrintNum(main, N);
                     min(main, N);
 
                 }
