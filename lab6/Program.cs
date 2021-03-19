@@ -49,14 +49,13 @@ namespace lab6
             {
                 int count = 1;
                 current = head;
-                while (current != null && count != position)
+                while (current != null && count != position + 1)
                 {
                     current = current.next;
                     count++;
                 }
-                current = current.next;
                 head = current;
-                size = size - position;
+                size = size / 2;
             }
 
         }
@@ -99,15 +98,7 @@ namespace lab6
                         Console.WriteLine("enteres number is " + num);
                         if (num < 0)
                         {
-                            int position;
-                            if (list.size % 2 != 0)
-                            {
-                                position = list.size / 2 + 1;
-                            }
-                            else
-                            {
-                                position = list.size / 2;
-                            }
+                            int position = list.size - list.size / 2;
                             list.DeleteAHalf(position);
                             count++;
                             list.Print();
@@ -130,15 +121,7 @@ namespace lab6
                         {
                             if (num < 0)
                             {
-                                int position;
-                                if (list.size % 2 != 0)
-                                {
-                                    position = list.size / 2 + 1;
-                                }
-                                else
-                                {
-                                    position = list.size / 2;
-                                }
+                                int position = list.size - list.size / 2;
                                 list.DeleteAHalf(position);
                                 count++;
                             }
