@@ -98,6 +98,8 @@ namespace lab6
                         Console.WriteLine("enteres number is " + num);
                         if (num < 0)
                         {
+                            list.Enqueue(num);
+                            list.Print();
                             int position = list.size - list.size / 2;
                             list.DeleteAHalf(position);
                             count++;
@@ -121,6 +123,8 @@ namespace lab6
                         {
                             if (num < 0)
                             {
+                                list.Enqueue(num);
+                                list.Print();
                                 int position = list.size - list.size / 2;
                                 list.DeleteAHalf(position);
                                 count++;
